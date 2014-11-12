@@ -1,0 +1,13 @@
+load('NormalizedFeaturesSet1');
+load('NormalizedFeaturesSet2');
+load('SubSetNormalizedFeaturesSet1');
+load('SubSetNormalizedFeaturesSet2');
+kfold=10;
+mixtures=1:20;
+Datasets={NormalizedFeaturesSet1,SubSetNormalizedFeaturesSet1,NormalizedFeaturesSet2,SubSetNormalizedFeaturesSet2};
+for ii=1:4
+    dataset=Datasets{ii};
+    
+    
+    [ Confusion_Mtx ] = GMM_Classifier(dataset,kfold,mixtures,Cov)
+end
